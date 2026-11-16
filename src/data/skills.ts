@@ -3,26 +3,58 @@ export interface SkillGroup {
   skills: string[];
 }
 
-// Grouped from the technologies used in the featured projects.
+// From the resume's technical skills, plus what the featured projects use.
 export const skillGroups: SkillGroup[] = [
   {
     title: "AI & LLMs",
-    skills: ["RAG pipelines", "GraphRAG", "Multi-agent systems (CrewAI)", "OpenAI API", "Embeddings & vector search", "Neo4j", "Prompt design"],
+    skills: [
+      "Multi-agent systems (Mastra, CrewAI)",
+      "LLM APIs (Gemini, OpenRouter, OpenAI)",
+      "Tool calling",
+      "Grounded retrieval with citations",
+      "RAG & GraphRAG",
+      "LLM evaluation",
+      "Prompt caching & cost optimization",
+    ],
   },
   {
-    title: "Computer Vision",
-    skills: ["YOLO11 pose estimation", "OpenCV", "OCR (EasyOCR)", "Stable Diffusion + ControlNet", "Geometry (Shapely)"],
+    title: "Programming",
+    skills: ["Python", "TypeScript", "JavaScript", "SQL", "HTML / CSS"],
   },
   {
     title: "Backend & Data",
-    skills: ["Python", "FastAPI", "Node.js / Express", "RabbitMQ", "MongoDB", "Redis", "SQLite", "ChromaDB", "MinIO"],
+    skills: [
+      "Flask",
+      "FastAPI",
+      "Node.js",
+      "Next.js",
+      "REST APIs",
+      "Microservices",
+      "MongoDB",
+      "PostgreSQL",
+      "Redis",
+      "RabbitMQ",
+      "Docker",
+    ],
+  },
+  {
+    title: "Computer Vision",
+    skills: ["YOLO11 pose estimation", "OpenCV", "OCR (EasyOCR)", "Stable Diffusion + ControlNet"],
   },
   {
     title: "Frontend",
-    skills: ["React", "TypeScript", "Tailwind CSS", "Vite", "Framer Motion", "Gradio"],
+    skills: ["React", "Next.js", "Tailwind CSS", "Vite", "Framer Motion"],
   },
   {
-    title: "DevOps & Quality",
-    skills: ["Docker & Compose", "GitHub Actions", "pytest", "Ruff / MyPy / Bandit", "Azure", "Datadog"],
+    title: "DevOps & Tools",
+    skills: [
+      "Git",
+      "GitHub Actions CI/CD",
+      "Vercel",
+      "Automated testing (pytest)",
+      "Claude Code",
+      "OpenAI Codex",
+      "GitHub Copilot",
+    ],
   },
 ];

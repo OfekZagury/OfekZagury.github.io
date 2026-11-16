@@ -1,11 +1,13 @@
 import { profile } from "../data/profile";
 import ThemeToggle from "./ThemeToggle";
 
+// mobile: false = hidden on small screens to keep the header on one line
 const NAV = [
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "#projects", label: "Projects", mobile: true },
+  { href: "#experience", label: "Experience", mobile: true },
+  { href: "#skills", label: "Skills", mobile: false },
+  { href: "#about", label: "About", mobile: false },
+  { href: "#contact", label: "Contact", mobile: true },
 ];
 
 export default function Header() {
@@ -28,7 +30,9 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-md px-2 py-1.5 text-sm text-zinc-600 transition hover:text-zinc-900 sm:px-3 dark:text-zinc-400 dark:hover:text-zinc-100"
+              className={`rounded-md px-2 py-1.5 text-sm text-zinc-600 transition hover:text-zinc-900 sm:px-3 dark:text-zinc-400 dark:hover:text-zinc-100 ${
+                item.mobile ? "" : "hidden md:inline-block"
+              }`}
             >
               {item.label}
             </a>

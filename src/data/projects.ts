@@ -1,24 +1,52 @@
 export type Category = "AI & LLMs" | "Computer Vision" | "Backend" | "Frontend";
 
-export type Accent = "emerald" | "sky" | "violet" | "amber" | "rose" | "cyan";
+export type Accent = "emerald" | "sky" | "violet" | "amber" | "rose" | "cyan" | "indigo";
 
 export interface Project {
   id: string;
   title: string;
   tagline: string;
+  /** Optional role line, e.g. for a product built with a team. */
+  role?: string;
+  /** Shown as a short period next to the role. */
+  period?: string;
   description: string;
   categories: Category[];
   /** Short steps shown as a mini pipeline on the card cover. */
   pipeline: string[];
   highlights: string[];
   tech: string[];
-  repo: string;
+  repo?: string;
+  website?: string;
+  /** Featured projects span the full width of the grid. */
+  featured?: boolean;
   accent: Accent;
 }
 
 const GITHUB = "https://github.com/OfekZagury";
 
 export const projects: Project[] = [
+  {
+    id: "dor-ha-why",
+    title: "Dor ha-Why (Generation Why)",
+    tagline: "What did your elected representatives actually do?",
+    role: "Co-Founder & CTO · team of 2 developers, with the CEO and product manager",
+    period: "June 2026 – Present",
+    description:
+      "A civic-tech AI platform that lets citizens check what their elected representatives actually did, answered only from official state data, with every claim cited.",
+    categories: ["AI & LLMs", "Backend"],
+    pipeline: ["Citizen question", "10 AI agents", "58 typed tools", "6 official sources", "Evidence gates", "Cited answer"],
+    highlights: [
+      "Production multi-agent research system with 10 AI agents and 58 typed tools over 6 official government sources",
+      "Powers the API behind Israel 2050's Smart Voter Guide for the 2026 elections: 4,000+ queries and 3,200+ conversations in two months",
+      "Deterministic evidence gates validate every LLM finding before it can become a citation",
+      "From an empty repo to a paying partner in 18 weeks, with code reviews and CI running 1,172 automated tests",
+    ],
+    tech: ["TypeScript", "Next.js", "Mastra", "Multi-agent systems", "Tool calling", "Grounded retrieval"],
+    website: "https://dor-why.co.il",
+    featured: true,
+    accent: "indigo",
+  },
   {
     id: "floorplan-copilot",
     title: "FloorplanCopilot",

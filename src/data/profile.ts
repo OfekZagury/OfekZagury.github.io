@@ -3,20 +3,31 @@
 
 export const profile = {
   name: "Ofek Zagury",
-  role: "AI & Full-Stack Developer",
+  role: "Software Engineer · AI & Backend",
   intro:
-    "I build AI-powered products end to end: retrieval pipelines and multi-agent LLM systems, computer vision, event-driven backends and the React apps on top of them.",
+    "I build production systems in Python and TypeScript, from multi-agent AI platforms that answer only from verified sources to Flask microservices and data pipelines.",
+  /** Small badge above the name. Leave label empty to hide it. */
+  current: {
+    label: "Co-Founder & CTO at Dor ha-Why",
+    href: "https://dor-why.co.il",
+  },
+  /** Numbers shown under the intro. */
+  stats: [
+    { value: "1.5+", label: "years building production systems" },
+    { value: "92", label: "GPA, B.Sc. Computer Science" },
+    { value: "1,172", label: "automated tests in Dor ha-Why" },
+  ],
   about: [
-    "I like projects where AI is one part of a real system rather than a demo: data has to be ingested and indexed, services have to talk to each other reliably, and the result has to be usable by a person at the end.",
-    "Most of my work is in Python, from RAG and agent frameworks to OpenCV and YOLO, and I build backends with FastAPI, message queues and Docker. On the frontend I work with React, TypeScript and Tailwind.",
-    "I care about the engineering around the model too: tests, CI, clear configuration and documentation that lets someone else run the project.",
+    "I'm a software engineer with 1.5+ years of experience building production systems in Python and TypeScript, and a B.Sc. in Computer Science from Reichman University (GPA 92, Dean's Excellence List in years 1 and 2).",
+    "Today I'm Co-Founder & CTO of Dor ha-Why, a civic-tech AI platform that turns official state data into cited answers about what elected representatives actually did, and a Student Software Engineer at Fortune Wide Solutions, where I build the internal platform, Flask microservices and data pipelines behind it.",
+    "I closely follow the AI revolution and the new tools it brings, and I care about the engineering around the model: evaluation, tests, CI and documentation. Leading a combat team in the reserves taught me responsibility, clear communication and calm under pressure, and I bring those to every project and team.",
   ],
   contactBlurb:
-    "Open to roles and collaborations in AI engineering and full-stack development. The fastest way to reach me is below.",
+    "Open to roles and collaborations in AI and backend engineering. The fastest way to reach me is below.",
   links: {
     github: "https://github.com/OfekZagury",
-    linkedin: "", // e.g. "https://www.linkedin.com/in/your-handle"
-    email: "", // e.g. "you@example.com"
+    linkedin: "https://www.linkedin.com/in/ofek-zagury/",
+    email: "ofek9986@gmail.com",
     cv: "", // e.g. "/cv.pdf" (put the file in /public)
   },
 };
