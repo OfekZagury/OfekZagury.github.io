@@ -2,12 +2,20 @@ import { profile } from "../data/profile";
 import Section from "./Section";
 
 export default function About() {
+  const [first, ...rest] = profile.about;
+
   return (
     <Section id="about" eyebrow="About" title="About me">
-      <div className="max-w-3xl space-y-5 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-        {profile.about.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+      <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
+        <p className="font-script text-6xl leading-none text-navy-800 sm:text-7xl dark:text-gold-200" aria-hidden="true">
+          {profile.name.split(" ")[0]}
+        </p>
+        <div className="space-y-5 text-lg leading-relaxed text-navy-700 dark:text-navy-100/85">
+          <p className="font-display text-xl leading-relaxed text-navy-900 sm:text-2xl dark:text-ivory">{first}</p>
+          {rest.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
       </div>
     </Section>
   );

@@ -1,5 +1,6 @@
 import { skillGroups } from "../data/skills";
 import Section from "./Section";
+import { CARD_FRAME, TAG_FRAME } from "./styles";
 
 export default function Skills() {
   return (
@@ -8,21 +9,18 @@ export default function Skills() {
       eyebrow="Toolbox"
       title="Skills"
       intro="What I use at work and across my projects."
-      className="border-y border-zinc-200 bg-zinc-50/60 dark:border-zinc-800/80 dark:bg-zinc-900/30"
+      className="border-y border-navy-100/80 bg-white dark:border-white/10 dark:bg-navy-900/40"
     >
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group) => (
-          <div
-            key={group.title}
-            className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950/60"
-          >
-            <h3 className="font-semibold">{group.title}</h3>
-            <ul className="mt-4 flex flex-wrap gap-2">
+          <div key={group.title} className={`p-6 sm:p-7 ${CARD_FRAME} bg-ivory dark:bg-navy-950/60`}>
+            <h3 className="flex items-center gap-3 font-display text-lg font-medium">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold-500 dark:bg-gold-300" aria-hidden="true" />
+              {group.title}
+            </h3>
+            <ul className="mt-5 flex flex-wrap gap-2">
               {group.skills.map((skill) => (
-                <li
-                  key={skill}
-                  className="rounded-full border border-zinc-200 px-3 py-1 text-sm text-zinc-700 dark:border-zinc-800 dark:text-zinc-300"
-                >
+                <li key={skill} className={`${TAG_FRAME} bg-white dark:bg-white/5`}>
                   {skill}
                 </li>
               ))}

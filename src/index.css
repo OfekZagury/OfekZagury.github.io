@@ -3,9 +3,35 @@
 /* Class-based dark mode: <html class="dark"> */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Palette taken from the profile banner: deep navy-steel blue + champagne gold */
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "Jost", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Allura", "Brush Script MT", cursive;
+
+  --color-navy-50: #eef3f9;
+  --color-navy-100: #d9e3ef;
+  --color-navy-200: #b3c6dc;
+  --color-navy-300: #87a3c3;
+  --color-navy-400: #5d7fa6;
+  --color-navy-500: #3f6189;
+  --color-navy-600: #2f4e74;
+  --color-navy-700: #223d5e;
+  --color-navy-800: #182e4a;
+  --color-navy-900: #112239;
+  --color-navy-950: #0a1627;
+
+  --color-gold-50: #fbf6ee;
+  --color-gold-100: #f5ead8;
+  --color-gold-200: #ecd8b7;
+  --color-gold-300: #e0c193;
+  --color-gold-400: #d3a872;
+  --color-gold-500: #c08d55;
+  --color-gold-600: #a57340;
+  --color-gold-700: #845a33;
+
+  --color-ivory: #faf7f2;
+  --color-copper: #e8a96b;
 }
 
 html {
@@ -13,21 +39,31 @@ html {
   scroll-padding-top: 5rem;
 }
 
-/* Subtle engineering-paper grid used behind the hero and card covers */
-.bg-grid {
-  background-image:
-    linear-gradient(to right, rgb(24 24 27 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(24 24 27 / 0.06) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-.dark .bg-grid {
-  background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+::selection {
+  background: var(--color-gold-200);
+  color: var(--color-navy-950);
 }
 
-.fade-mask {
-  mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
+/* Navy surface used by the hero and the contact card (same in light and dark mode) */
+.navy-surface {
+  background:
+    radial-gradient(120% 90% at 0% 0%, rgb(84 122 165 / 0.45) 0%, transparent 55%),
+    linear-gradient(135deg, #34587f 0%, #1e3a5c 45%, #0d1c33 100%);
+}
+
+/* Champagne beam, lit along its centre like the banner */
+.gold-beam {
+  background: linear-gradient(90deg, #9f7b4c 0%, #d9bb8c 30%, #f2e2c4 50%, #dcbf91 70%, #a8834f 100%);
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.06),
+    0 30px 60px -10px rgb(4 10 20 / 0.6);
+}
+
+.gold-text {
+  background: linear-gradient(120deg, #f3e3c6 0%, #e0c193 45%, #f5ead8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {

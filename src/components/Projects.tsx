@@ -27,22 +27,20 @@ export default function Projects() {
               type="button"
               onClick={() => setFilter(f)}
               aria-pressed={active}
-              className={`rounded-full border px-3.5 py-1.5 text-sm transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 ${
+              className={`rounded-full border px-4 py-1.5 font-display text-sm tracking-wide transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400 ${
                 active
-                  ? "border-zinc-900 bg-zinc-900 text-white dark:border-white dark:bg-white dark:text-zinc-900"
-                  : "border-zinc-200 text-zinc-600 hover:border-zinc-300 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-400 dark:hover:border-zinc-700 dark:hover:text-zinc-100"
+                  ? "border-navy-900 bg-navy-900 text-ivory dark:border-gold-300 dark:bg-gold-300 dark:text-navy-950"
+                  : "border-navy-200 text-navy-600 hover:border-gold-400 hover:text-navy-900 dark:border-white/15 dark:text-navy-200 dark:hover:border-gold-300/60 dark:hover:text-ivory"
               }`}
             >
               {f}
-              <span className={`ml-1.5 tabular-nums ${active ? "opacity-70" : "text-zinc-400 dark:text-zinc-500"}`}>
-                {count}
-              </span>
+              <span className={`ml-1.5 tabular-nums ${active ? "opacity-70" : "text-navy-400 dark:text-navy-400"}`}>{count}</span>
             </button>
           );
         })}
       </div>
 
-      <div className="mt-8 grid gap-6 md:grid-cols-2">
+      <div className="mt-10 grid gap-7 md:grid-cols-2">
         {visible.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

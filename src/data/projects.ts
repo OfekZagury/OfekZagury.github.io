@@ -1,7 +1,5 @@
 export type Category = "AI & LLMs" | "Computer Vision" | "Backend" | "Frontend";
 
-export type Accent = "emerald" | "sky" | "violet" | "amber" | "rose" | "cyan" | "indigo";
-
 export interface Project {
   id: string;
   title: string;
@@ -20,7 +18,6 @@ export interface Project {
   website?: string;
   /** Featured projects span the full width of the grid. */
   featured?: boolean;
-  accent: Accent;
 }
 
 const GITHUB = "https://github.com/OfekZagury";
@@ -45,7 +42,6 @@ export const projects: Project[] = [
     tech: ["TypeScript", "Next.js", "Mastra", "Multi-agent systems", "Tool calling", "Grounded retrieval"],
     website: "https://dor-why.co.il",
     featured: true,
-    accent: "indigo",
   },
   {
     id: "floorplan-copilot",
@@ -62,7 +58,6 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "ChromaDB", "SQLite", "Shapely", "ezdxf", "Gradio", "Diffusers", "Docker", "Azure", "pytest"],
     repo: `${GITHUB}/FloorplanCopilot`,
-    accent: "emerald",
   },
   {
     id: "psychology-session-analyzer",
@@ -79,7 +74,6 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "FastAPI", "RabbitMQ", "MinIO", "MongoDB", "Redis", "AssemblyAI", "OpenAI", "Docker Compose", "Datadog"],
     repo: `${GITHUB}/Psychology-Session-Analyzer`,
-    accent: "violet",
   },
   {
     id: "pokeriq",
@@ -96,7 +90,6 @@ export const projects: Project[] = [
     ],
     tech: ["React 19", "Vite", "Tailwind CSS", "Framer Motion", "Node.js", "Express", "GA4"],
     repo: `${GITHUB}/PokerIQ`,
-    accent: "amber",
   },
   {
     id: "algotrading-agents-crew",
@@ -113,7 +106,6 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "CrewAI", "OpenAI", "yfinance", "pandas-ta", "Alpaca API", "pytest"],
     repo: `${GITHUB}/Algotrading-Agents-Crew`,
-    accent: "sky",
   },
   {
     id: "ai-xml-story-investigator",
@@ -130,7 +122,6 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "OpenAI", "Microsoft GraphRAG", "Neo4j", "Embeddings"],
     repo: `${GITHUB}/AI-xml-Story-Investigator`,
-    accent: "rose",
   },
   {
     id: "table-tennis-analyzer",
@@ -147,7 +138,6 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "YOLO11", "OpenCV", "EasyOCR", "pandas", "Seaborn"],
     repo: `${GITHUB}/table_tennis_analyzer`,
-    accent: "cyan",
   },
 ];
 
