@@ -7,7 +7,7 @@ export default function About() {
   return (
     <Section id="about" eyebrow="About" title="About me">
       <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
-        <p className="font-script text-6xl leading-none text-navy-800 sm:text-7xl dark:text-gold-200" aria-hidden="true">
+        <p className="font-serif text-5xl font-medium italic leading-none text-navy-800 sm:text-6xl dark:text-gold-200" aria-hidden="true">
           {profile.name.split(" ")[0]}
         </p>
         <div className="space-y-5 text-lg leading-relaxed text-navy-700 dark:text-navy-100/85">

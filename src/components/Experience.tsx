@@ -1,10 +1,17 @@
 import { ArrowUpRight, Briefcase, GraduationCap, Languages, Shield } from "lucide-react";
-import type { ReactNode } from "react";
-import { education, languages, service, work, type Position } from "../data/experience";
+import { languages, timeline, type Position, type TimelineGroup } from "../data/experience";
 import Section from "./Section";
-import { CARD } from "./styles";
 
-const LABEL = "flex items-center gap-2 font-display text-xs font-medium uppercase tracking-[0.28em] text-navy-500 dark:text-navy-300";
+// Margin is added per use so the label never carries two conflicting margins.
+const LABEL =
+  "flex items-center gap-2 font-display text-xs font-medium uppercase tracking-[0.28em] text-navy-500 dark:text-navy-300";
+const ICON = "h-4 w-4 text-gold-600 dark:text-gold-300";
+
+const GROUP_ICONS: Record<TimelineGroup["icon"], typeof Briefcase> = {
+  work: Briefcase,
+  education: GraduationCap,
+  service: Shield,
+};
 
 function TimelineItem({ position }: { position: Position }) {
   return (
@@ -14,7 +21,7 @@ function TimelineItem({ position }: { position: Position }) {
         aria-hidden="true"
       />
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h3 className="font-display text-xl font-medium">
+        <h4 className="font-display text-xl font-medium">
           {position.role}
           <span className="font-light text-navy-400"> · </span>
           {position.href ? (
@@ -30,7 +37,7 @@ function TimelineItem({ position }: { position: Position }) {
           ) : (
             <span className="text-gold-700 dark:text-gold-300">{position.org}</span>
           )}
-        </h3>
+        </h4>
         <p className="font-display text-xs uppercase tracking-[0.2em] text-navy-500 dark:text-navy-300">{position.period}</p>
       </div>
       {position.summary && <p className="mt-2 text-navy-700 dark:text-navy-200">{position.summary}</p>}
@@ -46,60 +53,33 @@ function TimelineItem({ position }: { position: Position }) {
   );
 }
 
-function SideCard({ icon, title, children }: { icon: ReactNode; title: string; children: ReactNode }) {
-  return (
-    <div className={`p-6 ${CARD}`}>
-      <h3 className={LABEL}>
-        <span className="text-gold-600 dark:text-gold-300">{icon}</span>
-        {title}
-      </h3>
-      <div className="mt-4">{children}</div>
-    </div>
-  );
-}
-
 export default function Experience() {
   return (
     <Section id="experience" eyebrow="Experience" title="Where I've worked and studied">
-      <div className="grid gap-12 lg:grid-cols-3">
-        <div className="lg:col-span-2">
-          <h3 className={`mb-8 ${LABEL}`}>
-            <Briefcase className="h-4 w-4 text-gold-600 dark:text-gold-300" aria-hidden="true" />
-            Work
+      <div className="max-w-4xl space-y-16">
+        {timeline.map((group) => {
+          const Icon = GROUP_ICONS[group.icon];
+          return (
+            <div key={group.title}>
+              <h3 className={`mb-8 ${LABEL}`}>
+                <Icon className={ICON} aria-hidden="true" />
+                {group.title}
+              </h3>
+              <ol className="relative before:absolute before:bottom-2 before:left-[6px] before:top-2 before:w-px before:bg-gradient-to-b before:from-gold-400 before:to-gold-200/0">
+                {group.items.map((position) => (
+                  <TimelineItem key={position.org + position.role} position={position} />
+                ))}
+              </ol>
+            </div>
+          );
+        })}
+
+        <div>
+          <h3 className={`mb-4 ${LABEL}`}>
+            <Languages className={ICON} aria-hidden="true" />
+            Languages
           </h3>
-          <ol className="relative before:absolute before:bottom-2 before:left-[6px] before:top-2 before:w-px before:bg-gradient-to-b before:from-gold-400 before:to-gold-200/0">
-            {work.map((position) => (
-              <TimelineItem key={position.org} position={position} />
-            ))}
-          </ol>
-        </div>
-
-        <div className="space-y-6">
-          <SideCard icon={<GraduationCap className="h-4 w-4" aria-hidden="true" />} title="Education">
-            <p className="font-display text-lg font-medium">{education.degree}</p>
-            <p className="text-navy-600 dark:text-navy-200">{education.org}</p>
-            <p className="mt-1 font-display text-xs uppercase tracking-[0.2em] text-navy-500 dark:text-navy-300">{education.period}</p>
-            <ul className="mt-4 space-y-1.5 text-sm text-navy-800 dark:text-navy-100">
-              {education.details.map((detail) => (
-                <li key={detail}>{detail}</li>
-              ))}
-            </ul>
-          </SideCard>
-
-          <SideCard icon={<Shield className="h-4 w-4" aria-hidden="true" />} title="Military service">
-            <p className="font-display text-lg font-medium">{service.org}</p>
-            <p className="text-sm text-navy-600 dark:text-navy-200">{service.role}</p>
-            <p className="mt-1 font-display text-xs uppercase tracking-[0.2em] text-navy-500 dark:text-navy-300">{service.period}</p>
-            <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-navy-800 dark:text-navy-100">
-              {service.bullets.map((bullet) => (
-                <li key={bullet}>{bullet}</li>
-              ))}
-            </ul>
-          </SideCard>
-
-          <SideCard icon={<Languages className="h-4 w-4" aria-hidden="true" />} title="Languages">
-            <p className="text-sm text-navy-800 dark:text-navy-100">{languages.join(" · ")}</p>
-          </SideCard>
+          <p className="pl-9 text-[15px] text-navy-800 dark:text-navy-100">{languages.join(" · ")}</p>
         </div>
       </div>
     </Section>

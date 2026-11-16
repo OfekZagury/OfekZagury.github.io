@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-navy-950/40" aria-hidden="true" />
 
       <div className="relative mx-auto flex min-h-[78vh] max-w-6xl flex-col justify-center px-4 py-24 sm:px-6 sm:py-32">
-        <h1 className="font-script text-7xl leading-[1.1] text-ivory drop-shadow-[0_4px_24px_rgb(0_0_0/0.35)] sm:text-8xl lg:text-9xl">
+        <h1 className="font-serif text-5xl font-medium leading-[1.05] tracking-tight text-ivory drop-shadow-[0_4px_24px_rgb(0_0_0/0.35)] sm:text-7xl lg:text-8xl">
           {profile.name}
         </h1>
         <p className="mt-4 font-display text-xs font-light uppercase tracking-[0.3em] text-gold-200 sm:text-base sm:tracking-[0.42em]">
@@ -27,7 +27,7 @@ export default function Hero() {
           ))}
         </p>
         <div className="mt-8 h-px w-24 bg-gradient-to-r from-gold-300 to-transparent" aria-hidden="true" />
-        <p className="mt-8 max-w-xl text-lg leading-relaxed text-navy-100/90 sm:text-xl">{profile.intro}</p>
+        <p className="mt-8 max-w-2xl text-base leading-relaxed text-navy-100/90 sm:text-lg">{profile.intro}</p>
 
         <div className="mt-10 flex flex-wrap gap-3">
           <a href="#projects" className={GOLD_BUTTON}>

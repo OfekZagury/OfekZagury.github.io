@@ -24,7 +24,7 @@ export default function Header() {
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[linear-gradient(135deg,#f3e3c6,#d3a872)] font-display text-xs font-semibold tracking-wider text-navy-950">
             {initials}
           </span>
-          <span className="hidden font-script text-2xl leading-none text-ivory sm:inline">{profile.name}</span>
+          <span className="hidden font-serif text-lg font-medium leading-none tracking-tight text-ivory sm:inline">{profile.name}</span>
         </a>
         <nav aria-label="Main" className="flex items-center gap-0.5 sm:gap-1">
           {NAV.map((item) => (

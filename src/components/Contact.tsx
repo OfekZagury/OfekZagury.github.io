@@ -35,7 +35,7 @@ export default function Contact() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="navy-surface relative overflow-hidden rounded-3xl px-6 py-16 text-center shadow-[0_30px_80px_-30px_rgb(10_22_39/0.6)] sm:px-12 sm:py-20">
           <Beams className="inset-y-0 right-0 w-full opacity-25 md:w-1/2 md:opacity-90" />
-          <p className="relative font-script text-5xl leading-none text-gold-200 sm:text-6xl">Let's talk</p>
+          <p className="relative font-serif text-3xl italic leading-none text-gold-200 sm:text-4xl">Let's talk</p>
           <h2 id="contact-title" className="relative mt-4 font-display text-3xl font-medium tracking-tight text-ivory sm:text-4xl">
             Let's build something together
           </h2>

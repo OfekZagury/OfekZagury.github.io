@@ -27,7 +27,7 @@ npm run preview    # serve the production build locally
 
 ## Features
 
-- Navy and champagne-gold design (Jost, Inter and an Allura signature), with the crossing gold beams from my profile banner
+- Navy and champagne-gold design (Playfair Display, Jost and Inter), with the crossing gold beams from my profile banner
 - Light / dark mode that follows the system setting, with a remembered manual toggle
 - Project filter by domain (AI & LLMs, Computer Vision, Backend, Frontend)
 - Pipeline "covers" on each card instead of screenshots

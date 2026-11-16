@@ -4,12 +4,13 @@
 export const profile = {
   name: "Ofek Zagury",
   role: "Software Engineer · AI & Backend",
+  // Summary from the resume, shown under the name
   intro:
-    "I build production systems in Python and TypeScript, from multi-agent AI platforms that answer only from verified sources to Flask microservices and data pipelines.",
+    "Software Engineer with 1.5+ years building production systems in Python and TypeScript, and a B.Sc. in Computer Science from Reichman University (GPA 92, Dean's List, years 1 and 2). A constant learner, I closely follow the AI revolution and the new tools it brings. Leading a combat team in the reserves taught me responsibility, clear communication and calm under pressure, and I bring those to every project and team.",
+  // About section (kept free of what the summary above already says)
   about: [
-    "I'm a software engineer with 1.5+ years of experience building production systems in Python and TypeScript, and a B.Sc. in Computer Science from Reichman University (GPA 92, Dean's Excellence List in years 1 and 2).",
     "At Fortune Wide Solutions I build the internal platform, Flask microservices and data pipelines that analysts and managers use every day. Alongside it I co-founded Dor ha-Why, a civic-tech AI project that turns official state data into cited answers about what elected representatives actually did.",
-    "I closely follow the AI revolution and the new tools it brings, and I care about the engineering around the model: evaluation, tests, CI and documentation. Leading a combat team in the reserves taught me responsibility, clear communication and calm under pressure, and I bring those to every project and team.",
+    "I care about the engineering around the model, not only the model itself: evaluation, tests, CI and documentation that lets someone else run the project.",
   ],
   contactBlurb:
     "Open to roles and collaborations in AI and backend engineering. The fastest way to reach me is below.",
