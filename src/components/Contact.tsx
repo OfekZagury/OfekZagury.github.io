@@ -25,7 +25,7 @@ export default function Contact() {
     contactLinks.push({ href: links.github, label: "GitHub", icon: <GitHubIcon />, external: true });
   }
   if (links.cv) {
-    contactLinks.push({ href: links.cv, label: "Download CV", icon: <FileText className="h-4 w-4" />, external: false });
+    contactLinks.push({ href: links.cv, label: "Resume (PDF)", icon: <FileText className="h-4 w-4" />, external: true });
   }
 
   return (

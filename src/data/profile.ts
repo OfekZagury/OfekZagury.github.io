@@ -28,6 +28,6 @@ export const profile = {
     github: "https://github.com/OfekZagury",
     linkedin: "https://www.linkedin.com/in/ofek-zagury/",
     email: "ofek9986@gmail.com",
-    cv: "", // e.g. "/cv.pdf" (put the file in /public)
+    cv: "/Ofek-Zagury-Resume.pdf", // file lives in /public (public version, no phone number)
   },
 };

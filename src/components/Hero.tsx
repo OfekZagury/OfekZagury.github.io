@@ -60,9 +60,9 @@ export default function Hero() {
             GitHub
           </a>
           {links.cv && (
-            <a href={links.cv} className={SECONDARY_BUTTON}>
+            <a href={links.cv} target="_blank" rel="noreferrer" className={SECONDARY_BUTTON}>
               <FileText className="h-4 w-4" />
-              CV
+              Resume
             </a>
           )}
           {links.email && (
