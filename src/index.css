@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: <html class="dark"> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Subtle engineering-paper grid used behind the hero and card covers */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(24 24 27 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(24 24 27 / 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.dark .bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+}
+
+.fade-mask {
+  mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
