@@ -9,20 +9,6 @@ export interface Position {
 
 export const work: Position[] = [
   {
-    org: "Dor ha-Why (Generation Why)",
-    role: "Co-Founder & CTO",
-    period: "June 2026 – Present",
-    href: "https://dor-why.co.il",
-    summary:
-      "Civic-tech AI platform that lets citizens check what their elected representatives actually did, answered only from official state data with every claim cited.",
-    bullets: [
-      "Designed the production multi-agent research system (TypeScript, Next.js, Mastra): 10 AI agents and 58 typed tools over 6 official government sources",
-      "Led a team of 2 developers, working with the CEO and product manager, from an empty repo to a paying partner in 18 weeks",
-      "Delivered the API behind Israel 2050's Smart Voter Guide for the 2026 elections: 4,000+ queries and 3,200+ conversations in two months",
-      "Built deterministic evidence gates that validate every LLM finding before it can become a citation; ran code reviews and CI with 1,172 automated tests",
-    ],
-  },
-  {
     org: "Fortune Wide Solutions",
     role: "Student Software Engineer",
     period: "April 2025 – Present",

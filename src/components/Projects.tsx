@@ -13,7 +13,7 @@ export default function Projects() {
   return (
     <Section
       id="projects"
-      eyebrow="Work"
+      eyebrow="Projects"
       title="Featured projects"
       intro="Each card shows the project's pipeline, what makes it technically interesting and the stack behind it."
     >

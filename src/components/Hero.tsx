@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight, FileText, Mail } from "lucide-react";
+import { ArrowDown, FileText, Mail } from "lucide-react";
 import { profile } from "../data/profile";
 import { GitHubIcon, LinkedInIcon } from "./icons";
 
@@ -6,7 +6,7 @@ const SECONDARY_BUTTON =
   "inline-flex items-center gap-2 rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-medium transition hover:border-zinc-400 hover:bg-zinc-50 dark:border-zinc-700 dark:hover:border-zinc-600 dark:hover:bg-zinc-900";
 
 export default function Hero() {
-  const { links, current, stats } = profile;
+  const { links } = profile;
 
   return (
     <section id="top" className="relative overflow-hidden">
@@ -16,24 +16,8 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-6xl px-4 pb-8 pt-16 sm:px-6 sm:pb-10 sm:pt-24">
-        {current.label && (
-          <a
-            href={current.href}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-emerald-600/20 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-800 transition hover:border-emerald-600/40 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300"
-          >
-            <span className="relative flex h-2 w-2" aria-hidden="true">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            {current.label}
-            <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
-        )}
-
-        <p className="mt-8 font-mono text-xs font-medium uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">
+      <div className="relative mx-auto max-w-6xl px-4 pb-8 pt-20 sm:px-6 sm:pb-10 sm:pt-28">
+        <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">
           {profile.role}
         </p>
         <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl">Hi, I'm {profile.name}.</h1>
@@ -72,15 +56,6 @@ export default function Hero() {
             </a>
           )}
         </div>
-
-        <dl className="mt-14 grid max-w-2xl grid-cols-3 divide-x divide-zinc-200 border-y border-zinc-200 dark:divide-zinc-800 dark:border-zinc-800">
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col-reverse px-3 py-4 first:pl-0 sm:px-6">
-              <dt className="mt-1 text-xs leading-snug text-zinc-500 sm:text-sm">{stat.label}</dt>
-              <dd className="text-2xl font-bold tabular-nums sm:text-3xl">{stat.value}</dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

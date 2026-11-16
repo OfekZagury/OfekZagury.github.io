@@ -7,7 +7,7 @@ export default function Skills() {
       id="skills"
       eyebrow="Toolbox"
       title="Skills"
-      intro="What I use at work, in Dor ha-Why and across my projects."
+      intro="What I use at work and across my projects."
       className="border-y border-zinc-200 bg-zinc-50/60 dark:border-zinc-800/80 dark:bg-zinc-900/30"
     >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
