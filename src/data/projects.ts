@@ -117,16 +117,18 @@ export const projects: Project[] = [
     title: "AI XML Story Investigator",
     tagline: "Three RAG strategies vs. one murder mystery",
     description:
-      "Solve a whodunit hidden in chains of SMS messages by asking questions, and compare naive RAG, Microsoft GraphRAG and a Neo4j knowledge graph on the same story.",
+      "Solve a whodunit hidden in chains of SMS messages by asking questions, and compare naive RAG, Microsoft GraphRAG and a Neo4j knowledge graph on the same story. In the live demo, naive RAG falls for the red herring while both GraphRAG searches find the culprit.",
     categories: ["AI & LLMs"],
     pipeline: ["SMS XML", "Chunk / build graph", "Retrieve", "Answer"],
     highlights: [
-      "Namespaced XML parser for participants, group chats, chapters and attachments",
-      "Microsoft GraphRAG with global (community summaries) and local (entity) search",
+      "Namespaced XML parser for participants, group chats, chapters and attachment metadata",
+      "Microsoft GraphRAG with global (community summaries) and local (entity) search over a Gemini-built index",
       "LLM-generated Cypher builds a Neo4j knowledge graph next to a vector index",
+      "Streamlit demo answers each question with all strategies side by side, with run limits and a shared answer cache",
     ],
-    tech: ["Python", "OpenAI", "Microsoft GraphRAG", "Neo4j", "Embeddings"],
+    tech: ["Python", "Gemini", "OpenAI", "Microsoft GraphRAG", "Neo4j", "Streamlit", "Embeddings"],
     repo: `${GITHUB}/AI-xml-Story-Investigator`,
+    demo: "https://ai-xml-story-investigator.streamlit.app/",
   },
   {
     id: "table-tennis-analyzer",
