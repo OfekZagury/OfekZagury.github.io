@@ -99,7 +99,7 @@ export const projects: Project[] = [
     title: "Algotrading Agents Crew",
     tagline: "A team of LLM agents that trades (on paper)",
     description:
-      "Four CrewAI agents (news analyst, technical strategist, risk manager and execution trader) hand off structured decisions and place bracket orders on an Alpaca paper-trading account. The live demo runs the whole crew on Gemini for any of nine stocks and shows each agent's decision as it lands.",
+      "Four CrewAI agents (news analyst, technical strategist, risk manager and execution trader) hand off structured decisions and place bracket orders on an Alpaca paper-trading account. The live demo runs the whole crew on Gemini for any US stock ticker and shows each agent's decision as it lands.",
     categories: ["AI & LLMs"],
     pipeline: ["News sentiment", "RSI + MACD", "Risk 1:3", "Funds check", "Bracket order"],
     highlights: [
