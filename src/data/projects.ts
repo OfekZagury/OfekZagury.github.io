@@ -92,6 +92,7 @@ export const projects: Project[] = [
     ],
     tech: ["React 19", "Vite", "Tailwind CSS", "Framer Motion", "Node.js", "Express", "GA4"],
     repo: `${GITHUB}/PokerIQ`,
+    demo: "https://ofekzagury.github.io/PokerIQ/",
   },
   {
     id: "algotrading-agents-crew",
