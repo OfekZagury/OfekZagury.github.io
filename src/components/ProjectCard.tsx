@@ -1,10 +1,12 @@
-import { ArrowUpRight, Check, ChevronRight, Globe } from "lucide-react";
+import { ArrowUpRight, Check, ChevronRight, Globe, Play } from "lucide-react";
 import type { Project } from "../data/projects";
 import { GitHubIcon } from "./icons";
 import { CARD, TAG } from "./styles";
 
-const LINK_CLASS =
-  "inline-flex items-center gap-2 font-display text-sm font-medium tracking-wide text-navy-900 transition hover:text-gold-700 dark:text-ivory dark:hover:text-gold-300";
+const LINK_BASE = "inline-flex items-center gap-2 font-display text-sm font-medium tracking-wide transition";
+const LINK_CLASS = `${LINK_BASE} text-navy-900 hover:text-gold-700 dark:text-ivory dark:hover:text-gold-300`;
+// The live demo link is the card's main call to action, so it leads in gold.
+const DEMO_LINK_CLASS = `${LINK_BASE} text-gold-700 hover:text-navy-900 dark:text-gold-300 dark:hover:text-ivory`;
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
@@ -68,6 +70,13 @@ export default function ProjectCard({ project }: { project: Project }) {
         </ul>
 
         <div className="mt-auto flex flex-wrap gap-x-6 gap-y-2 border-t border-navy-100/80 pt-5 dark:border-white/10 [&:not(:empty)]:mt-7">
+          {project.demo && (
+            <a href={project.demo} target="_blank" rel="noreferrer" className={DEMO_LINK_CLASS}>
+              <Play className="h-4 w-4 fill-current" />
+              Try it live
+              <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
+          )}
           {project.website && (
             <a href={project.website} target="_blank" rel="noreferrer" className={LINK_CLASS}>
               <Globe className="h-4 w-4" />

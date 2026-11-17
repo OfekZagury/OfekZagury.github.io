@@ -16,6 +16,8 @@ export interface Project {
   tech: string[];
   repo?: string;
   website?: string;
+  /** Live demo visitors can try themselves. */
+  demo?: string;
   /** Featured projects span the full width of the grid. */
   featured?: boolean;
 }
@@ -96,16 +98,18 @@ export const projects: Project[] = [
     title: "Algotrading Agents Crew",
     tagline: "A team of LLM agents that trades (on paper)",
     description:
-      "Four CrewAI agents (news analyst, technical strategist, risk manager and execution trader) hand off structured decisions and place bracket orders on an Alpaca paper-trading account.",
+      "Four CrewAI agents (news analyst, technical strategist, risk manager and execution trader) hand off structured decisions and place bracket orders on an Alpaca paper-trading account. The live demo runs the whole crew on Gemini for any of nine stocks and shows each agent's decision as it lands.",
     categories: ["AI & LLMs"],
     pipeline: ["News sentiment", "RSI + MACD", "Risk 1:3", "Funds check", "Bracket order"],
     highlights: [
       "Typed tools with Pydantic field descriptions so agents call market-data and broker APIs with valid arguments",
       "Stop loss below the 30-day support, take profit at 3× the risk and fixed position sizing",
-      "Hourly disk cache for market data and a test-driven sliding-window rate limiter for the broker API",
+      "Fallback data sources (Yahoo → Alpaca prices, Google News) keep the crew running on rate-limited cloud hosts",
+      "Streamlit demo in simulation mode, with per-visitor and daily run limits and shared result caching to cap API spend",
     ],
-    tech: ["Python", "CrewAI", "OpenAI", "yfinance", "pandas-ta", "Alpaca API", "pytest"],
+    tech: ["Python", "CrewAI", "Gemini", "OpenAI", "Streamlit", "pandas-ta", "Alpaca API", "pytest"],
     repo: `${GITHUB}/Algotrading-Agents-Crew`,
+    demo: "https://algotrading-agents-crew.streamlit.app/",
   },
   {
     id: "ai-xml-story-investigator",
