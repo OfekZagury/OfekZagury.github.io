@@ -46,38 +46,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "floorplan-copilot",
-    title: "FloorplanCopilot",
-    tagline: "Cursor for architects",
-    description:
-      "Describe an apartment in plain English, pick the best match from 17,000 real floor plans, resize it, furnish it in an interactive editor and export a layered DXF file that opens directly in AutoCAD.",
-    categories: ["AI & LLMs", "Computer Vision"],
-    pipeline: ["Text query", "Vector search", "Scale to m²", "Auto-furnish", "DXF export"],
-    highlights: [
-      "RAG over the ResPlan dataset: every plan becomes a topological description indexed in ChromaDB, combined with structured room filters",
-      "Room-aware furniture placement, a Gradio web editor and optional Stable Diffusion + ControlNet renders",
-      "54 unit tests, Ruff / MyPy / Bandit, a Docker image for Azure and CI on GitHub Actions",
-    ],
-    tech: ["Python", "ChromaDB", "SQLite", "Shapely", "ezdxf", "Gradio", "Diffusers", "Docker", "Azure", "pytest"],
-    repo: `${GITHUB}/FloorplanCopilot`,
-  },
-  {
-    id: "psychology-session-analyzer",
-    title: "Psychology Session Analyzer",
-    tagline: "From a session recording to structured insight",
-    description:
-      "An event-driven microservices backend that turns a recorded therapy session into a summary, the patient's breakthrough moments and emotional triggers, with every stage running as an independent worker.",
-    categories: ["Backend", "AI & LLMs"],
-    pipeline: ["Upload", "Extract audio", "Transcribe + diarize", "LLM analysis", "Report API"],
-    highlights: [
-      "Five services connected by durable RabbitMQ queues, manual acks and prefetch = 1",
-      "Claim-check pattern: media lives in MinIO, only IDs travel through the queues",
-      "Redis cache keyed by transcript hash, idempotent MongoDB upserts, structured JSON logs and Datadog",
-    ],
-    tech: ["Python", "FastAPI", "RabbitMQ", "MinIO", "MongoDB", "Redis", "AssemblyAI", "OpenAI", "Docker Compose", "Datadog"],
-    repo: `${GITHUB}/Psychology-Session-Analyzer`,
-  },
-  {
     id: "pokeriq",
     title: "PokerIQ",
     tagline: "Duolingo for poker",
@@ -131,6 +99,38 @@ export const projects: Project[] = [
     demo: "https://ai-xml-story-investigator.streamlit.app/",
   },
   {
+    id: "floorplan-copilot",
+    title: "FloorplanCopilot",
+    tagline: "Cursor for architects",
+    description:
+      "Describe an apartment in plain English, pick the best match from 17,000 real floor plans, resize it, furnish it in an interactive editor and export a layered DXF file that opens directly in AutoCAD.",
+    categories: ["AI & LLMs", "Computer Vision"],
+    pipeline: ["Text query", "Vector search", "Scale to m²", "Auto-furnish", "DXF export"],
+    highlights: [
+      "RAG over the ResPlan dataset: every plan becomes a topological description indexed in ChromaDB, combined with structured room filters",
+      "Room-aware furniture placement, a Gradio web editor and optional Stable Diffusion + ControlNet renders",
+      "54 unit tests, Ruff / MyPy / Bandit, a Docker image for Azure and CI on GitHub Actions",
+    ],
+    tech: ["Python", "ChromaDB", "SQLite", "Shapely", "ezdxf", "Gradio", "Diffusers", "Docker", "Azure", "pytest"],
+    repo: `${GITHUB}/FloorplanCopilot`,
+  },
+  {
+    id: "psychology-session-analyzer",
+    title: "Psychology Session Analyzer",
+    tagline: "From a session recording to structured insight",
+    description:
+      "An event-driven microservices backend that turns a recorded therapy session into a summary, the patient's breakthrough moments and emotional triggers, with every stage running as an independent worker.",
+    categories: ["Backend", "AI & LLMs"],
+    pipeline: ["Upload", "Extract audio", "Transcribe + diarize", "LLM analysis", "Report API"],
+    highlights: [
+      "Five services connected by durable RabbitMQ queues, manual acks and prefetch = 1",
+      "Claim-check pattern: media lives in MinIO, only IDs travel through the queues",
+      "Redis cache keyed by transcript hash, idempotent MongoDB upserts, structured JSON logs and Datadog",
+    ],
+    tech: ["Python", "FastAPI", "RabbitMQ", "MinIO", "MongoDB", "Redis", "AssemblyAI", "OpenAI", "Docker Compose", "Datadog"],
+    repo: `${GITHUB}/Psychology-Session-Analyzer`,
+  },
+   {
     id: "table-tennis-analyzer",
     title: "Table Tennis Analyzer",
     tagline: "Match analytics from broadcast video",
