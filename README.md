@@ -10,7 +10,7 @@ All text lives in `src/data/`, so updating the site never requires touching comp
 
 | File | What it controls |
 |---|---|
-| `src/data/profile.ts` | Name, role, intro, about text, contact blurb and links (email, LinkedIn, CV) – empty links are hidden |
+| `src/data/profile.ts` | Name, role, intro, contact blurb and links (email, LinkedIn, CV) – empty links are hidden |
 | `src/data/projects.ts` | Project cards: description, pipeline steps, highlights, tech stack, repository link, accent colour |
 | `src/data/skills.ts` | Skill groups |
 
