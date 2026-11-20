@@ -69,8 +69,9 @@ function BrowserFrame({ project, onPlay }: { project: Project; onPlay: () => voi
     </>
   );
 
-  const bodyClass =
-    "navy-surface relative block min-h-[300px] overflow-hidden sm:aspect-[16/11] sm:min-h-0 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-gold-300";
+  // Posters are 16:9 video frames; the pipeline fallback needs a little more height.
+  const sizeClass = project.poster ? "aspect-video" : "min-h-[300px] sm:aspect-[16/11] sm:min-h-0";
+  const bodyClass = `navy-surface relative block overflow-hidden ${sizeClass} focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-gold-300`;
 
   return (
     <div className="group/frame overflow-hidden rounded-2xl border border-navy-100 bg-navy-950 shadow-[0_40px_80px_-40px_rgb(10_22_39/0.6)] transition duration-500 hover:-translate-y-1 dark:border-white/10">
