@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { categories, projects, type Category } from "../data/projects";
-import ProjectCard from "./ProjectCard";
+import ProjectRow from "./ProjectRow";
+import Reveal from "./Reveal";
 import Section from "./Section";
 
 type Filter = "All" | Category;
@@ -13,10 +14,11 @@ export default function Projects() {
   return (
     <Section
       id="projects"
-      eyebrow="Projects"
-      title="Featured projects"
-      intro="Each card shows the project's pipeline, what makes it technically interesting and the stack behind it."
+      eyebrow="Selected work"
+      title="Systems I've designed and built."
+      intro="From multi-agent AI to computer vision: each project with its pipeline, the engineering behind it and, where there is one, a live demo."
     >
+      <Reveal>
       <div className="flex flex-wrap gap-2" role="group" aria-label="Filter projects by domain">
         {filters.map((f) => {
           const count = f === "All" ? projects.length : projects.filter((p) => p.categories.includes(f)).length;
@@ -39,10 +41,11 @@ export default function Projects() {
           );
         })}
       </div>
+      </Reveal>
 
-      <div className="mt-10 grid gap-7 md:grid-cols-2">
-        {visible.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+      <div className="mt-16 space-y-28 sm:space-y-36">
+        {visible.map((project, i) => (
+          <ProjectRow key={project.id} project={project} flip={i % 2 === 1} />
         ))}
       </div>
     </Section>

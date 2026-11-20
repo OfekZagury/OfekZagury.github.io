@@ -4,6 +4,8 @@
 export const profile = {
   name: "Ofek Zagury",
   role: "Software Engineer · AI & Backend",
+  // One-line statement under the name; *words between asterisks* are highlighted in gold
+  headline: "Building *AI systems* that hold up in *production*.",
   // Summary from the resume, shown under the name
   intro:
     "Software Engineer with 1.5+ years building production systems in Python and TypeScript, and a B.Sc. in Computer Science from Reichman University (GPA 92, Dean's List, years 1 and 2). A constant learner, I closely follow the AI revolution and the new tools it brings. Leading a combat team in the reserves taught me responsibility, clear communication and calm under pressure, and I bring those to every project and team.",

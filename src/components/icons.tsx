@@ -12,6 +12,9 @@ export function GitHubIcon({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
+/** GitHub mark sized for inline text links. */
+export const GITHUB_LINK_ICON = <GitHubIcon className="h-4 w-4" />;
+
 export function LinkedInIcon({ className = "h-4 w-4" }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>

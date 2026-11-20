@@ -10,8 +10,9 @@ All text lives in `src/data/`, so updating the site never requires touching comp
 
 | File | What it controls |
 |---|---|
-| `src/data/profile.ts` | Name, role, intro, contact blurb and links (email, LinkedIn, CV) – empty links are hidden |
-| `src/data/projects.ts` | Project cards: description, pipeline steps, highlights, tech stack, repository link, accent colour |
+| `src/data/profile.ts` | Name, role, headline (`*words*` in gold), intro, contact blurb and links (email, LinkedIn, CV) – empty links are hidden |
+| `src/data/projects.ts` | Project rows: description, pipeline steps, headline metrics, highlights, tech stack, links, and an optional demo video + poster (files in `public/videos/`) |
+| `src/data/experience.ts` | Work, education and military service timeline, with optional tech tags per role |
 | `src/data/skills.ts` | Skill groups |
 
 To add a CV, put the PDF in `public/` and set `links.cv` to `"/cv.pdf"`.
@@ -30,5 +31,6 @@ npm run preview    # serve the production build locally
 - Navy and champagne-gold design (Playfair Display, Jost and Inter), with the crossing gold beams from my profile banner
 - Light / dark mode that follows the system setting, with a remembered manual toggle
 - Project filter by domain (AI & LLMs, Computer Vision, Backend, Frontend)
-- Pipeline "covers" on each card instead of screenshots
+- Projects as alternating showcase rows: a browser-frame visual (demo poster with a play button, or the project's pipeline), animated headline metrics and a demo-video dialog
+- Reveal-on-scroll animations, a nav underline that follows the current section and a large contact section
 - Responsive down to 360 px, keyboard accessible, respects reduced-motion settings

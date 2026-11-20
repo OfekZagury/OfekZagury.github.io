@@ -18,7 +18,12 @@ export interface Project {
   website?: string;
   /** Live demo visitors can try themselves. */
   demo?: string;
-  /** Featured projects span the full width of the grid. */
+  /** Demo video and its poster frame, as paths inside /public (e.g. "videos/pokeriq.mp4"). */
+  video?: string;
+  poster?: string;
+  /** A few headline numbers under the description. Plain counts ("24", "4,000+") animate. */
+  metrics?: { value: string; label: string }[];
+  /** Featured projects get a "Featured" label. */
   featured?: boolean;
 }
 
@@ -42,6 +47,7 @@ export const projects: Project[] = [
       "From an empty repo to a paying partner in 18 weeks, with code reviews and CI running 1,172 automated tests",
     ],
     tech: ["TypeScript", "Next.js", "Mastra", "Multi-agent systems", "Tool calling", "Grounded retrieval"],
+    metrics: [{ value: "4,000+", label: "Queries in two months" }, { value: "3,200+", label: "Conversations" }, { value: "1,172", label: "Automated tests" }],
     website: "https://dor-why.co.il",
     featured: true,
   },
@@ -59,6 +65,7 @@ export const projects: Project[] = [
       "Lessons are code-split and lazy-loaded, cutting the main bundle from 1.27 MB to 408 KB",
     ],
     tech: ["React 19", "Vite", "Tailwind CSS", "Framer Motion", "Node.js", "Express", "GA4"],
+    metrics: [{ value: "24", label: "Lessons" }, { value: "11", label: "Chapters" }, { value: "3×", label: "Lighter main bundle" }],
     repo: `${GITHUB}/PokerIQ`,
     demo: "https://ofekzagury.github.io/PokerIQ/",
   },
@@ -77,6 +84,7 @@ export const projects: Project[] = [
       "Streamlit demo in simulation mode, with per-visitor and daily run limits and shared result caching to cap API spend",
     ],
     tech: ["Python", "CrewAI", "Gemini", "OpenAI", "Streamlit", "pandas-ta", "Alpaca API", "pytest"],
+    metrics: [{ value: "4", label: "Specialised agents" }, { value: "1:3", label: "Risk / reward per trade" }],
     repo: `${GITHUB}/Algotrading-Agents-Crew`,
     demo: "https://algotrading-agents-crew.streamlit.app/",
   },
@@ -95,6 +103,7 @@ export const projects: Project[] = [
       "Streamlit demo answers each question with all strategies side by side, with run limits and a shared answer cache",
     ],
     tech: ["Python", "Gemini", "OpenAI", "Microsoft GraphRAG", "Neo4j", "Streamlit", "Embeddings"],
+    metrics: [{ value: "348", label: "SMS messages" }, { value: "3", label: "RAG strategies" }, { value: "169", label: "Graph entities" }],
     repo: `${GITHUB}/AI-xml-Story-Investigator`,
     demo: "https://ai-xml-story-investigator.streamlit.app/",
   },
@@ -112,6 +121,7 @@ export const projects: Project[] = [
       "54 unit tests, Ruff / MyPy / Bandit, a Docker image for Azure and CI on GitHub Actions",
     ],
     tech: ["Python", "ChromaDB", "SQLite", "Shapely", "ezdxf", "Gradio", "Diffusers", "Docker", "Azure", "pytest"],
+    metrics: [{ value: "17,000", label: "Real floor plans" }, { value: "54", label: "Unit tests" }],
     repo: `${GITHUB}/FloorplanCopilot`,
   },
   {
@@ -128,9 +138,10 @@ export const projects: Project[] = [
       "Redis cache keyed by transcript hash, idempotent MongoDB upserts, structured JSON logs and Datadog",
     ],
     tech: ["Python", "FastAPI", "RabbitMQ", "MinIO", "MongoDB", "Redis", "AssemblyAI", "OpenAI", "Docker Compose", "Datadog"],
+    metrics: [{ value: "5", label: "Microservices" }, { value: "4", label: "Infrastructure services" }],
     repo: `${GITHUB}/Psychology-Session-Analyzer`,
   },
-   {
+  {
     id: "table-tennis-analyzer",
     title: "Table Tennis Analyzer",
     tagline: "Match analytics from broadcast video",
@@ -144,6 +155,7 @@ export const projects: Project[] = [
       "EasyOCR scoreboard reading with error correction and a score timeline",
     ],
     tech: ["Python", "YOLO11", "OpenCV", "EasyOCR", "pandas", "Seaborn"],
+    metrics: [{ value: "17", label: "Pose keypoints per player" }, { value: "2", label: "Players tracked" }],
     repo: `${GITHUB}/table_tennis_analyzer`,
   },
 ];

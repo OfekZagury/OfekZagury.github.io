@@ -66,6 +66,43 @@ html {
   color: transparent;
 }
 
+/* Faint champagne star field with a slow twinkle (hero and contact backgrounds) */
+.star-field {
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, rgb(243 227 198 / 0.7), transparent 60%),
+    radial-gradient(1px 1px at 28% 72%, rgb(243 227 198 / 0.55), transparent 60%),
+    radial-gradient(1.5px 1.5px at 46% 34%, rgb(224 193 147 / 0.6), transparent 60%),
+    radial-gradient(1px 1px at 63% 82%, rgb(243 227 198 / 0.5), transparent 60%),
+    radial-gradient(1.5px 1.5px at 81% 22%, rgb(224 193 147 / 0.55), transparent 60%),
+    radial-gradient(1px 1px at 92% 58%, rgb(243 227 198 / 0.6), transparent 60%);
+  background-size: 340px 340px;
+  animation: twinkle 7s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.45;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+/* Reveal-on-scroll: elements fade up once they enter the viewport (see Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -75,5 +112,9 @@ html {
   *::after {
     transition: none !important;
     animation: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

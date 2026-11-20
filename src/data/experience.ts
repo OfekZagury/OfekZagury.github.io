@@ -5,6 +5,8 @@ export interface Position {
   href?: string;
   summary?: string;
   bullets: string[];
+  /** Technologies used in this role, shown as tags. */
+  tech?: string[];
 }
 
 export interface TimelineGroup {
@@ -29,6 +31,7 @@ export const timeline: TimelineGroup[] = [
           "Build Python data pipelines that pull data from internal systems and MongoDB and serve it to the platform through REST APIs",
           "Develop frontend features in JavaScript, HTML and CSS that present processed financial data in clear tables, plus custom Python tools for operational needs",
         ],
+        tech: ["Python", "Flask", "Microservices", "Docker", "MongoDB", "REST APIs", "JavaScript", "HTML / CSS"],
       },
     ],
   },
