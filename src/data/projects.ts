@@ -48,6 +48,8 @@ export const projects: Project[] = [
     ],
     tech: ["TypeScript", "Next.js", "Mastra", "Multi-agent systems", "Tool calling", "Grounded retrieval"],
     metrics: [{ value: "4,000+", label: "Queries in two months" }, { value: "3,200+", label: "Conversations" }, { value: "1,172", label: "Automated tests" }],
+    video: "videos/dor-ha-why.mp4",
+    poster: "videos/dor-ha-why.jpg",
     website: "https://dor-why.co.il",
     featured: true,
   },
@@ -166,6 +168,8 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "YOLO11", "OpenCV", "EasyOCR", "pandas", "Seaborn"],
     metrics: [{ value: "17", label: "Pose keypoints per player" }, { value: "2", label: "Players tracked" }],
+    video: "videos/table-tennis-analyzer.mp4",
+    poster: "videos/table-tennis-analyzer.jpg",
     repo: `${GITHUB}/table_tennis_analyzer`,
   },
 ];
